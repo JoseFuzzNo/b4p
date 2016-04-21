@@ -1,0 +1,143 @@
+#N canvas 328 36 558 624 10;
+#X obj 0 1175 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_vco 3 12 0 18
+-204280 -1 0;
+#X obj 0 492 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 175 223 507 361 META 0;
+#X text 12 285 AUTHOR Jose Carlos Granja;
+#X text 12 305 WEBSITE -;
+#X text 12 325 RELEASE_DATE 2016;
+#X text 12 5 KEYWORDS oscillator b4p;
+#X text 12 45 DESCRIPTION voltage controlled oscillator;
+#X text 12 65 INLET_0 signal;
+#X text 12 85 INLET_1 signal;
+#X text 12 105 INLET_2 signal;
+#X text 12 125 INLET_3 signal;
+#X text 12 145 INLET_4 signal;
+#X text 12 165 INLET_5 signal;
+#X text 12 205 OUTLET_0 signal;
+#X text 12 225 OUTLET_1 signal;
+#X text 12 265 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 185 INLET_6 list;
+#X text 12 245 OUTLET_2 list;
+#X restore 500 1177 pd META;
+#X obj 0 818 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 1105 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 1147 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+12 0 13 -228856 -1 0;
+#N canvas 208 83 428 545 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [b4p_vco] Related Objects;
+#X obj 61 106 b4p_cloud;
+#X obj 61 269 b4p_lfo;
+#X obj 175 269 b4p_pdvco;
+#X restore 102 1177 pd Related_objects;
+#X obj 78 827 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 89 161 b4p_vco;
+#X text 98 500 signal;
+#X text 168 500 - 1v/oct input 1;
+#X obj 78 500 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 78 522 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 98 522 signal;
+#X obj 78 544 cnv 17 3 17 empty \$0-pddp.cnv.let.0 2 5 9 0 16 -228856
+-162280 0;
+#X text 98 544 signal;
+#X obj 78 566 cnv 17 3 17 empty \$0-pddp.cnv.let.0 3 5 9 0 16 -228856
+-162280 0;
+#X text 98 566 signal;
+#X obj 78 588 cnv 17 3 17 empty \$0-pddp.cnv.let.0 4 5 9 0 16 -228856
+-162280 0;
+#X text 98 588 signal;
+#X obj 78 610 cnv 17 3 17 empty \$0-pddp.cnv.let.0 5 5 9 0 16 -228856
+-162280 0;
+#X text 98 610 signal;
+#X text 168 566 - linear input;
+#X text 168 522 - 1v/oct input 2;
+#X text 168 544 - 1v/oct input 3;
+#X text 98 1124 (none);
+#X text 11 23 voltage controlled oscillator;
+#X text 168 588 - pulse width modulation input (0-5v);
+#X text 168 610 - syncronization input;
+#X obj 78 849 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X msg 384 358 \; pd dsp 1;
+#X obj 384 336 loadbang;
+#X obj 89 132 sig~;
+#X text 98 826 signal;
+#X text 98 848 signal;
+#X text 168 826 - output waveform (10Vpp);
+#X text 168 848 - phase output (0-5v);
+#X obj 89 94 mtof;
+#X obj 89 113 / 12;
+#X text 140 118 Attenuable inputs;
+#X obj 365 161 b4p_lfo;
+#X text 365 104 Try connecting theoutput of this LFOinto the inputs
+ofthe VCO.;
+#X text 166 62 <- MIDI Note;
+#X obj 78 630 cnv 17 3 170 empty \$0-pddp.cnv.let.0 6 5 9 0 16 -228856
+-162280 0;
+#X text 129 137 ---------------------;
+#X text 98 630 offset;
+#X text 98 650 octave;
+#X text 98 670 waveform;
+#X text 98 690 cv2Atten;
+#X text 98 710 cv3Atten;
+#X text 98 730 linAtten;
+#X text 98 750 pw;
+#X text 98 770 pwm;
+#X obj 89 60 nbx 3 20 0 127 0 0 empty empty empty 0 -8 0 20 -2209 -262144
+-262144 0 256 3;
+#N canvas 491 74 403 545 daisyChain 0;
+#X obj 106 142 b4p_vco;
+#X obj 106 320 b4p_vco;
+#X text 106 113 Try changing any parameter of the top VCO.;
+#X text 87 474 You can see this VCO reacting to those changes.;
+#X text 161 44 Daisy chaining modules.;
+#X obj 165 294 print One VCO says to another;
+#X connect 0 2 1 6;
+#X connect 0 2 5 0;
+#X restore 258 1064 pd daisyChain;
+#X text 168 630 - sets the offset control (0-1);
+#X text 168 650 - sets the octave;
+#X text 168 670 - sets the waveform (0-3);
+#X text 168 690 - sets the attenuetion of input 2 (0-1);
+#X text 168 710 - sets the attenuetion of input 3 (0-1);
+#X text 168 730 - sets the attenuetion of the linear input (0-1);
+#X text 168 770 - sets the attenuation of PWM input (0-1);
+#X text 168 750 - sets the pulse width of the square wave (.5-1);
+#X text 168 1040 This outlet can be used to control other VCO's;
+#X obj 78 870 cnv 17 3 220 empty \$0-pddp.cnv.let.0 2 5 9 0 16 -228856
+-162280 0;
+#X text 98 870 offset;
+#X text 98 890 octave;
+#X text 98 910 waveform;
+#X text 98 930 cv2Atten;
+#X text 98 950 cv3Atten;
+#X text 98 970 linAtten;
+#X text 98 990 pw;
+#X text 98 1010 pwm;
+#X text 168 870 - offset control status (0-1);
+#X text 168 950 - attenuetion of input 3 (0-1);
+#X text 168 970 - attenuetion of the linear input (0-1);
+#X text 168 990 - pulse width of the square wave (.5-1);
+#X text 168 1010 - attenuation of PWM input (0-1);
+#X text 168 890 - current octave;
+#X text 168 910 - current waveform (0-3);
+#X text 168 930 - attenuetion of input 2 (0-1);
+#X obj 89 323 b4p_output;
+#X connect 9 0 82 0;
+#X connect 9 0 82 1;
+#X connect 32 0 31 0;
+#X connect 33 0 9 0;
+#X connect 38 0 39 0;
+#X connect 39 0 33 0;
+#X connect 54 0 38 0;

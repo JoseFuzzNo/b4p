@@ -1,0 +1,43 @@
+#N canvas 588 76 549 568 10;
+#X obj 161 131 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 161 212 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 217 cnv 10 35 12 empty empty CV 0 5 0 10 -1 -261234 0;
+#X obj 161 89 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 161 110 cnv 15 90 20 empty empty OSC2CV 5 10 0 14 -2209 -4032
+0;
+#X obj 152 508 outlet~;
+#X obj 170 173 cnv 10 12 12 empty empty Port: 0 5 0 10 -1625 -4032
+0;
+#X symbolatom 166 147 13 0 0 0 - - -, f 13;
+#X obj 170 133 cnv 10 12 12 empty empty Space: 0 5 0 10 -1625 -4032
+0;
+#X msg 150 324 port \$1;
+#X floatatom 167 187 13 0 0 0 - - -, f 13;
+#X obj 152 424 route /test;
+#X obj 152 446 * 5;
+#X obj 152 468 sig~;
+#X obj 95 179 s \$0-port;
+#X obj 152 300 r \$0-port;
+#X obj 87 141 s \$0-space;
+#X obj 215 402 r \$0-space;
+#X obj 150 345 mrpeach/udpreceive 8000;
+#X obj 150 367 mrpeach/unpackOSC;
+#X obj 165 46 preset_node b4p;
+#X obj 181 67 preset_node b4p;
+#X connect 7 0 16 0;
+#X connect 7 0 20 0;
+#X connect 9 0 18 0;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 5 0;
+#X connect 15 0 9 0;
+#X connect 17 0 11 1;
+#X connect 18 0 19 0;
+#X connect 19 0 11 0;
+#X connect 20 0 7 0;
+#X connect 21 0 10 0;
+#X coords 0 -1 1 1 90 143 2 161 89;

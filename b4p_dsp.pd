@@ -1,0 +1,59 @@
+#N canvas 250 92 549 568 10;
+#X obj 165 130 tgl 82 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 161 131 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 161 212 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 161 89 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 161 110 cnv 15 90 20 empty empty DSP 5 10 0 14 -2209 -4032 0
+;
+#X obj 305 183 cputime;
+#X obj 305 78 loadbang;
+#X obj 305 141 metro 1000;
+#X msg 305 99 1;
+#X floatatom 305 120 0 0 0 0 - - -;
+#X obj 305 162 t b b;
+#X obj 305 225 * 0.1;
+#X obj 305 204 int;
+#X msg 305 246 label CPU:\$1%;
+#X obj 176 158 cnv 15 1 1 empty \$0-dspLbl CPU:1% 5 10 0 14 -1625 -44926
+0;
+#X obj 305 298 s \$0-dspLbl;
+#X msg 420 248 color 47;
+#X msg 192 362 color -26209 47;
+#X msg 173 339 color -26209 -17226;
+#X obj 142 259 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 89 311 \; pd dsp \$1;
+#X obj 239 -33 r pd;
+#X obj 239 -9 route dsp;
+#X msg 239 24 set \$1;
+#X obj 176 280 sel 0;
+#X obj 203 299 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 19 0;
+#X connect 0 0 20 0;
+#X connect 0 0 24 0;
+#X connect 5 0 12 0;
+#X connect 6 0 8 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 5 0;
+#X connect 10 1 5 1;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 15 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 18 0 15 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 22 0 24 0;
+#X connect 23 0 0 0;
+#X connect 24 0 18 0;
+#X connect 24 1 25 0;
+#X connect 25 0 17 0;
+#X coords 0 -1 1 1 90 143 2 161 89;

@@ -1,0 +1,118 @@
+#N canvas 690 14 558 622 10;
+#X obj 0 1114 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_mixer 3 12 0
+18 -204280 -1 0;
+#X obj 0 562 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 495 230 507 361 META 0;
+#X text 12 225 AUTHOR Jose Carlos Granja;
+#X text 12 245 WEBSITE -;
+#X text 12 265 RELEASE_DATE 2016;
+#X text 12 65 INLET_0 signal;
+#X text 12 165 OUTLET_0 signal;
+#X text 12 205 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 85 INLET_1 signal;
+#X text 12 105 INLET_2 signal;
+#X text 12 125 INLET_3 signal;
+#X text 12 5 KEYWORDS mixer b4p;
+#X text 12 45 DESCRIPTION audio and control mixer;
+#X text 12 145 INLET_4 list;
+#X text 12 185 OUTLET_1 list;
+#X restore 500 1116 pd META;
+#X obj 0 837 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 1044 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 1086 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+12 0 13 -228856 -1 0;
+#N canvas 208 83 428 298 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [b4p_mixer] Related Objects;
+#X obj 170 86 b4p_gain;
+#X restore 102 1116 pd Related_objects;
+#X obj 78 846 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 570 signal;
+#X obj 78 570 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 1063 (none);
+#X msg 480 387 \; pd dsp 1;
+#X obj 480 365 loadbang;
+#X text 98 845 signal;
+#X text 11 23 audio and control mixer;
+#X text 98 592 signal;
+#X obj 78 592 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 98 614 signal;
+#X obj 78 614 cnv 17 3 17 empty \$0-pddp.cnv.let.0 2 5 9 0 16 -228856
+-162280 0;
+#X text 98 636 signal;
+#X obj 78 636 cnv 17 3 17 empty \$0-pddp.cnv.let.0 3 5 9 0 16 -228856
+-162280 0;
+#X text 168 570 - channel 1 input;
+#X text 168 592 - channel 2 input;
+#X text 168 614 - channel 3 input;
+#X text 168 636 - channel 4 input;
+#X text 168 845 - output mix;
+#X obj 20 366 b4p_scope;
+#X obj 20 55 b4p_vco;
+#X obj 281 55 b4p_cloud;
+#X obj 20 213 b4p_mixer;
+#X text 242 283 Turn up the volume of the two first channels.;
+#X text 155 390 <- Adjust the scope with this buttons;
+#X obj 78 658 cnv 17 3 160 empty \$0-pddp.cnv.let.0 4 5 9 0 16 -228856
+-162280 0;
+#X text 98 658 level1;
+#X text 98 678 level2;
+#X text 98 698 level3;
+#X text 98 718 level4;
+#X text 98 738 mute1;
+#X text 98 758 mute2;
+#X text 98 778 mute3;
+#X text 98 798 mute4;
+#X text 168 658 - volume of channel 1;
+#X text 168 678 - volume of channel 2;
+#X text 168 698 - volume of channel 3;
+#X text 168 718 - volume of channel 4;
+#X text 168 738 - mute channel 1;
+#X text 168 758 - mute channel 2;
+#X text 168 778 - mute channel 3;
+#X text 168 798 - mute channel 4;
+#X obj 78 867 cnv 17 3 160 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 98 867 level1;
+#X text 98 887 level2;
+#X text 98 907 level3;
+#X text 98 927 level4;
+#X text 98 947 mute1;
+#X text 98 967 mute2;
+#X text 98 987 mute3;
+#X text 98 1007 mute4;
+#X text 168 867 - volume of channel 1;
+#X text 168 887 - volume of channel 2;
+#X text 168 907 - volume of channel 3;
+#X text 168 927 - volume of channel 4;
+#X text 168 947 - mute channel 1;
+#X text 168 967 - mute channel 2;
+#X text 168 987 - mute channel 3;
+#X text 168 1007 - mute channel 4;
+#N canvas 812 34 403 545 daisyChain 1;
+#X text 144 44 Daisy chaining modules.;
+#X obj 98 142 b4p_mixer;
+#X obj 98 319 b4p_mixer;
+#X text 69 113 Try changing any parameter of the top mixer.;
+#X text 50 474 You can see this mixer reacting to those changes.;
+#X obj 105 296 print One MIXER says to another;
+#X connect 1 1 2 4;
+#X connect 1 1 5 0;
+#X restore 372 499 pd daisyChain;
+#X text 217 463 This module can be disy chainedwith the right inlet
+and right outlet.;
+#X text 217 499 Check out this example ->;
+#X connect 13 0 12 0;
+#X connect 28 0 30 0;
+#X connect 29 0 30 1;
+#X connect 30 0 27 0;

@@ -1,0 +1,87 @@
+#N canvas 791 32 549 568 10;
+#X obj 163 136 nbx 1 71 1 2000 0 1 empty empty empty 0 -8 0 56 -262144
+-1 -1 120 256 0;
+#X obj 161 131 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 161 212 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 161 89 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 161 110 cnv 15 90 20 empty empty TRANSPORT 5 10 0 14 -2209 -4032
+0;
+#X obj 73 276 s \$0-bpm;
+#X obj 326 318 r \$0-tempoMillis;
+#X obj 151 268 s \$0-tempoMillis;
+#X msg 73 256 label \$1BPM;
+#X obj 181 162 cnv 15 21 15 empty \$0-bpm 120BPM 3 8 0 14 -1625 -4032
+0;
+#X obj 73 237 i, f 5;
+#X obj 275 339 metro 500;
+#X obj 150 243 expr 60000 / $f1;
+#X msg 360 389 color 47;
+#X obj 424 369 delay 50;
+#X msg 424 389 color -35715;
+#X obj 238 218 cnv 8 8 8 empty \$0-triggLed empty 20 12 0 14 -2209
+-262144 0;
+#X obj 361 427 s \$0-triggLed;
+#X obj 164 36 preset_node b4p;
+#X msg 275 319 1;
+#X obj 275 299 loadbang;
+#X obj 206 389 s b4p_transport_metro;
+#N canvas 506 207 450 300 mute 0;
+#X obj 116 100 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 101 100 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 17 198 cnv 15 32 15 empty empty empty 20 12 0 14 -2209 -66577
+0;
+#X obj 100 100 cnv 15 33 15 empty \$0-muteCnv On 6 7 0 12 -44926 -262144
+0;
+#X obj 153 243 s \$0-muteCnv;
+#X obj 56 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 153 135 sel 0;
+#X obj 180 154 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 79 246 outlet;
+#X obj 68 174 expr 1 - $f1;
+#X msg 241 186 color -26209 1;
+#X msg 155 203 label On;
+#X msg 241 203 label Off;
+#X msg 154 183 color 47 0;
+#X msg 117 78 set \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 0 5 0;
+#X connect 1 0 9 0;
+#X connect 1 0 14 0;
+#X connect 6 0 13 0;
+#X connect 6 0 11 0;
+#X connect 6 1 7 0;
+#X connect 7 0 10 0;
+#X connect 7 0 12 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
+#X connect 14 0 0 0;
+#X coords 0 -1 1 1 33 15 2 100 100;
+#X restore 193 138 pd mute;
+#X connect 0 0 12 0;
+#X connect 0 0 10 0;
+#X connect 6 0 11 1;
+#X connect 8 0 5 0;
+#X connect 10 0 8 0;
+#X connect 11 0 14 0;
+#X connect 11 0 13 0;
+#X connect 11 0 21 0;
+#X connect 12 0 7 0;
+#X connect 13 0 17 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 18 0 0 0;
+#X connect 19 0 11 0;
+#X connect 20 0 19 0;
+#X connect 22 0 11 0;
+#X coords 0 -1 1 1 90 143 2 161 89;

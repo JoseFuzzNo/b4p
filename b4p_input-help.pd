@@ -1,0 +1,50 @@
+#N canvas 380 0 558 584 10;
+#X obj 0 555 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_input 3 12 0
+18 -204280 -1 0;
+#X obj 0 392 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 109 257 507 361 META 0;
+#X text 12 125 AUTHOR Jose Carlos Granja;
+#X text 12 145 WEBSITE -;
+#X text 12 165 RELEASE_DATE 2016;
+#X text 12 105 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 85 OUTLET_1 signal;
+#X text 12 65 OUTLET_0 signal;
+#X text 12 45 DESCRIPTION audio input;
+#X text 12 5 KEYWORDS input adc b4p;
+#X restore 500 557 pd META;
+#X obj 0 428 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 485 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 527 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 208 83 428 545 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [b4p_input] Related Objects;
+#X obj 114 116 b4p_output;
+#X obj 114 289 b4p_envFollower;
+#X restore 102 557 pd Related_objects;
+#X obj 78 437 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 504 (none);
+#X msg 445 88 \; pd dsp 1;
+#X obj 445 66 loadbang;
+#X text 98 436 signal;
+#X text 11 23 audio input;
+#X obj 232 58 b4p_input;
+#X obj 122 209 b4p_scope;
+#X obj 275 210 b4p_scope;
+#X text 98 400 (none);
+#X text 168 436 - left channel;
+#X obj 78 457 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 98 456 signal;
+#X text 168 456 - right channel;
+#X connect 11 0 10 0;
+#X connect 14 0 15 0;
+#X connect 14 1 16 0;

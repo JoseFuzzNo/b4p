@@ -1,0 +1,56 @@
+#N canvas 555 18 558 622 10;
+#X obj 0 707 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_glide 3 12 0
+18 -204280 -1 0;
+#X obj 0 542 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 755 197 507 361 META 0;
+#X text 12 125 AUTHOR Jose Carlos Granja;
+#X text 12 145 WEBSITE -;
+#X text 12 165 RELEASE_DATE 2016;
+#X text 12 65 INLET_0 signal;
+#X text 12 85 OUTLET_0 signal;
+#X text 12 105 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 5 KEYWORDS glide portamento b4p;
+#X text 12 45 DESCRIPTION portamento stage;
+#X restore 500 709 pd META;
+#X obj 0 590 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 637 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 679 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 684 215 428 318 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [b4p_glide] Related Objects;
+#X obj 104 79 b4p_sah;
+#X obj 211 79 b4p_gain;
+#X restore 102 709 pd Related_objects;
+#X obj 78 599 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 550 signal;
+#X obj 78 550 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 656 (none);
+#X text 98 598 signal;
+#X text 168 550 - input signal;
+#X text 168 598 - output signal;
+#X obj 159 365 b4p_glide;
+#X obj 158 62 b4p_lfo;
+#X text 11 23 portamento stage;
+#X obj 257 61 b4p_metro;
+#X obj 158 212 b4p_sah;
+#X obj 258 211 b4p_scope;
+#X obj 258 365 b4p_scope;
+#X msg 448 86 \; pd dsp 1;
+#X obj 448 64 loadbang;
+#X text 27 432 Try adjusting theportamento control;
+#X connect 15 0 21 0;
+#X connect 16 0 19 0;
+#X connect 16 0 20 0;
+#X connect 18 0 19 1;
+#X connect 19 0 15 0;
+#X connect 23 0 22 0;

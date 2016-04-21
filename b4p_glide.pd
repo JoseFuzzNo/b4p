@@ -1,0 +1,52 @@
+#N canvas 817 145 549 568 10;
+#X obj 161 131 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 44 138 inlet~;
+#X obj 161 212 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 217 cnv 10 35 12 empty empty Output 0 5 0 10 -1 -261234
+0;
+#X obj 161 89 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 164 96 cnv 10 35 12 empty empty Input 0 5 0 10 -1 -261234 0
+;
+#X obj 161 110 cnv 15 90 20 empty empty GLIDE 5 10 0 14 -2209 -4032
+0;
+#X obj 44 426 outlet~;
+#X obj 275 148 * 100;
+#X obj 275 170 i;
+#X msg 275 192 label \$1%;
+#X obj 176 140 cnv 10 12 12 empty empty Portamento 0 5 0 10 -1625 -4032
+0;
+#X obj 65 188 change~;
+#X obj 65 242 click2bang~;
+#X obj 44 285 snapshot~;
+#X obj 44 402 line~;
+#X obj 65 210 sel~ 1 -1;
+#X msg 44 380 \$1 \$2;
+#X obj 44 358 pack f f;
+#X obj 189 237 s \$0-portamento;
+#X obj 89 315 r \$0-portamento;
+#X obj 89 336 * 400;
+#X obj 195 159 moonlib/mknob 25 200 0 1 0 1 empty empty 0% 7 32 0 8
+-1625 -4032 -4032 0 1;
+#X obj 177 61 preset_node b4p;
+#X connect 1 0 12 0;
+#X connect 1 0 14 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 22 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 14 0 18 0;
+#X connect 15 0 7 0;
+#X connect 16 0 13 0;
+#X connect 16 1 13 0;
+#X connect 17 0 15 0;
+#X connect 18 0 17 0;
+#X connect 20 0 21 0;
+#X connect 21 0 18 1;
+#X connect 22 0 8 0;
+#X connect 22 0 19 0;
+#X connect 23 0 22 0;
+#X coords 0 -1 1 1 90 143 2 161 89;

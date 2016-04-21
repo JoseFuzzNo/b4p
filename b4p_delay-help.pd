@@ -1,0 +1,53 @@
+#N canvas 742 0 558 622 10;
+#X obj 0 685 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_delay 3 12 0
+18 -204280 -1 0;
+#X obj 0 532 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 711 263 507 361 META 0;
+#X text 12 125 AUTHOR Jose Carlos Granja;
+#X text 12 145 WEBSITE -;
+#X text 12 165 RELEASE_DATE 2016;
+#X text 12 65 INLET_0 signal;
+#X text 12 85 OUTLET_0 signal;
+#X text 12 105 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 45 DESCRIPTION delay;
+#X text 12 5 KEYWORDS delay b4p;
+#X restore 500 687 pd META;
+#X obj 0 568 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 615 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 657 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 807 76 428 300 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [b4p_delay] Related Objects;
+#X obj 113 85 b4p_freeverb;
+#X restore 102 687 pd Related_objects;
+#X obj 78 577 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 540 signal;
+#X obj 78 540 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 634 (none);
+#X msg 379 435 \; pd dsp 1;
+#X obj 379 413 loadbang;
+#X text 98 576 signal;
+#X obj 66 63 b4p_input;
+#X obj 66 211 b4p_delay;
+#X obj 66 359 b4p_output;
+#X obj 286 211 b4p_delay;
+#X text 11 23 delay;
+#X text 168 540 - audio input;
+#X text 168 576 - audio output;
+#X text 229 117 This is a basic delay unit withdelay time \, feedback
+\, modulationand blend controls.;
+#X connect 13 0 12 0;
+#X connect 15 0 16 0;
+#X connect 15 1 18 0;
+#X connect 16 0 17 0;
+#X connect 18 0 17 1;

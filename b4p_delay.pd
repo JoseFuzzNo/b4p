@@ -1,0 +1,218 @@
+#N canvas 860 92 549 568 10;
+#X obj 161 131 cnv 15 210 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 161 212 cnv 15 210 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 217 cnv 10 35 12 empty empty Output 0 5 0 10 -1 -261234
+0;
+#X obj 161 89 cnv 15 210 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 96 cnv 10 35 12 empty empty Input 0 5 0 10 -1 -261234 0
+;
+#X obj 175 140 cnv 10 12 12 empty empty Delay 0 5 0 10 -1625 -4032
+0;
+#X obj 85 159 i;
+#X obj 161 110 cnv 15 210 20 empty empty DELAY 5 10 0 14 -2209 -4032
+0;
+#X obj 399 188 * 100;
+#X obj 399 210 i;
+#X msg 399 232 label \$1%;
+#X obj 281 140 cnv 10 12 12 empty empty Mod 0 5 0 10 -1625 -4032 0
+;
+#X msg 85 181 label \$1ms;
+#X obj 216 140 cnv 10 12 12 empty empty Feedback 0 5 0 10 -1625 -4032
+0;
+#X obj 80 93 i;
+#X obj 324 140 cnv 10 12 12 empty empty Blend 0 5 0 10 -1625 -4032
+0;
+#X obj 406 116 i;
+#N canvas 506 170 450 300 delayUnit 0;
+#X obj 396 311 *~ 1;
+#X obj 507 300 *~ 0;
+#X obj 505 72 inlet;
+#X text 503 46 Delay time (milliseconds);
+#X obj 397 259 r~ \$0in;
+#X obj 672 70 inlet;
+#X obj 802 70 inlet;
+#X obj 892 70 inlet;
+#X obj 397 402 outlet~;
+#X obj 192 59 inlet~;
+#X obj 192 213 delwrite~ \$0delay 40000;
+#X obj 207 88 s~ \$0in;
+#X text 259 87 Clean signal;
+#X text 890 44 Modulation (0-1);
+#X text 800 44 Blend (0-1);
+#X text 670 44 Feedback (0-1);
+#X obj 892 93 s \$0mod;
+#X obj 522 166 r \$0mod;
+#X obj 539 190 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+0.0606061;
+#X obj 417 284 expr 1 - $f1;
+#X obj 802 93 s \$0blend;
+#X obj 528 267 r \$0blend;
+#X obj 528 242 s~ \$0feeadback;
+#X obj 206 129 r~ \$0feeadback;
+#X obj 206 179 *~ 0;
+#X obj 672 93 s \$0feedbackLevel;
+#X obj 227 154 r \$0feedbackLevel;
+#X obj 505 138 vd~ \$0delay;
+#X obj 505 116 line~;
+#X msg 505 94 \$1 100;
+#N canvas 433 184 450 300 filter 0;
+#X obj 196 26 inlet~;
+#X text 197 3 Audio;
+#X obj 398 34 inlet;
+#X text 395 12 Bypass;
+#X obj 197 275 outlet~;
+#X obj 452 173 *~ 1;
+#X obj 473 150 expr 1 - $f1;
+#X obj 196 226 *~ 0;
+#X obj 195 176 hip~ 400;
+#X obj 240 125 clip 0 1;
+#X obj 240 150 expr ( $f1 * 1450 ) + 50;
+#X obj 240 102 inlet;
+#X text 235 81 Mod qty;
+#X obj 398 59 s \$0bypass;
+#X obj 217 202 r \$0bypass;
+#X obj 473 127 r \$0bypass;
+#X connect 0 0 5 0;
+#X connect 0 0 8 0;
+#X connect 2 0 13 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 1;
+#X connect 11 0 9 0;
+#X connect 14 0 7 1;
+#X connect 15 0 6 0;
+#X restore 507 212 pd filter;
+#X connect 0 0 8 0;
+#X connect 1 0 8 0;
+#X connect 2 0 29 0;
+#X connect 4 0 0 0;
+#X connect 5 0 25 0;
+#X connect 6 0 20 0;
+#X connect 7 0 16 0;
+#X connect 9 0 10 0;
+#X connect 9 0 11 0;
+#X connect 17 0 18 0;
+#X connect 17 0 30 1;
+#X connect 18 0 30 2;
+#X connect 19 0 0 1;
+#X connect 21 0 19 0;
+#X connect 21 0 1 1;
+#X connect 23 0 24 0;
+#X connect 24 0 10 0;
+#X connect 26 0 24 1;
+#X connect 27 0 30 0;
+#X connect 28 0 27 0;
+#X connect 29 0 28 0;
+#X connect 30 0 22 0;
+#X connect 30 0 1 0;
+#X restore 89 427 pd delayUnit, f 21;
+#X obj 90 371 inlet~;
+#X obj 86 510 outlet~;
+#X obj 80 73 * 100;
+#X msg 80 115 label \$1%;
+#X obj 406 96 * 100;
+#N canvas 297 90 450 300 mute 0;
+#X obj 100 100 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 100 100 cnv 15 65 15 empty empty empty 20 12 0 14 -2209 -66577
+0;
+#X obj 100 100 cnv 15 15 15 empty \$0-bypassCnv Bypass 20 7 0 12 -1625
+-166441 0;
+#X obj 80 159 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 153 135 sel 0;
+#X obj 180 154 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 153 181 color -26209 1;
+#X msg 180 206 color 47 47;
+#X obj 153 243 s \$0-bypassCnv;
+#X obj 48 179 outlet;
+#X connect 0 0 4 0;
+#X connect 0 0 3 0;
+#X connect 0 0 9 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X coords 0 -1 1 1 65 15 2 100 100;
+#X restore 303 112 pd mute;
+#N canvas 297 227 450 300 switch 0;
+#X obj 115 76 inlet~, f 7;
+#X obj 36 76 inlet;
+#X obj 36 171 sel 0;
+#X obj 115 108 spigot~;
+#X obj 175 76 inlet~, f 7;
+#X obj 175 108 spigot~;
+#X msg 36 190 0, f 1;
+#X msg 63 190 1, f 1;
+#X msg 96 190 0, f 1;
+#X msg 123 190 1, f 1;
+#X obj 96 171 sel 1;
+#X obj 184 146 outlet~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 10 0;
+#X connect 2 0 6 0;
+#X connect 2 1 7 0;
+#X connect 3 0 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 11 0;
+#X connect 6 0 3 1;
+#X connect 7 0 3 1;
+#X connect 8 0 5 1;
+#X connect 9 0 5 1;
+#X connect 10 0 8 0;
+#X connect 10 1 9 0;
+#X restore 78 474 pd switch, f 12;
+#X obj 306 254 s \$0-bypass;
+#X obj 15 448 r \$0-bypass;
+#X msg 406 138 label \$1%;
+#X obj 176 158 moonlib/mknob 25 100 0 1250 0 1 empty empty 200ms 1
+32 0 8 -1625 -4032 -4032 1584 1;
+#X obj 226 158 moonlib/mknob 25 100 0 1 0 1 empty empty 0% 5 32 0 8
+-1625 -4032 -4032 0 1;
+#X obj 276 158 mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8 -1625 -4032
+-4032 0 1;
+#X obj 326 158 moonlib/mknob 25 100 0 1 0 1 empty empty 25% 5 32 0
+8 -1625 -4032 -4032 2500 1;
+#X obj 175 63 preset_node b4p;
+#X obj 224 33 preset_node b4p;
+#X obj 275 62 preset_node b4p;
+#X obj 326 36 preset_node b4p;
+#X connect 6 0 12 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 30 0;
+#X connect 12 0 28 0;
+#X connect 14 0 21 0;
+#X connect 16 0 27 0;
+#X connect 17 0 24 1;
+#X connect 18 0 17 0;
+#X connect 18 0 24 2;
+#X connect 20 0 14 0;
+#X connect 21 0 29 0;
+#X connect 22 0 16 0;
+#X connect 23 0 25 0;
+#X connect 24 0 19 0;
+#X connect 26 0 24 0;
+#X connect 27 0 31 0;
+#X connect 28 0 6 0;
+#X connect 28 0 17 1;
+#X connect 29 0 20 0;
+#X connect 29 0 17 2;
+#X connect 30 0 8 0;
+#X connect 30 0 17 4;
+#X connect 31 0 17 3;
+#X connect 31 0 22 0;
+#X connect 32 0 28 0;
+#X connect 33 0 29 0;
+#X connect 34 0 30 0;
+#X connect 35 0 31 0;
+#X coords 0 -1 1 1 210 143 2 161 89;

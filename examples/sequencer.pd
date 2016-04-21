@@ -1,0 +1,116 @@
+#N canvas 356 62 679 664 10;
+#X obj 57 -86 b4p_lfo;
+#X obj 57 62 b4p_sequencer;
+#X obj 57 210 b4p_mixer;
+#X obj 57 358 b4p_quantizer;
+#X obj 359 62 b4p_lfo;
+#X obj 57 654 b4p_vco;
+#X obj 317 654 b4p_vco;
+#X obj 57 812 b4p_mixer;
+#X obj 57 980 b4p_vca;
+#X obj 57 1298 b4p_ladder;
+#X obj 57 1446 b4p_delay;
+#X obj 57 1594 b4p_freeverb;
+#X obj 57 1742 b4p_output;
+#X obj 158 979 b4p_adsr;
+#X obj 106 1142 b4p_lfo;
+#X obj 211 1142 b4p_adsr;
+#X obj 162 -86 b4p_preset;
+#X obj 163 39 preset_hub b4p %hidden% %node% 2 0 56 %preset% 0 5.21986
+%preset% 1 5.21986 %preset% 2 5.21986 %preset% 3 5.21986 %node% 2 0
+57 %preset% 0 0 %preset% 1 0 %preset% 2 0 %preset% 3 0 %node% 2 2 77
+%preset% 0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 2 78 %preset%
+0 0.447236 %preset% 1 0.135678 %preset% 2 0.135678 %preset% 3 0.447236
+%node% 2 2 79 %preset% 0 0 %preset% 1 0 %preset% 2 0 %preset% 3 0 %node%
+2 2 80 %preset% 0 0 %preset% 1 0 %preset% 2 0 %preset% 3 0 %node% 2
+2 81 %preset% 0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 2
+82 %preset% 0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 2 83
+%preset% 0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 2 84 %preset%
+0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 3 54 %preset% 0
+5 %node% 2 4 29 %preset% 0 0.134269 %preset% 1 0 %node% 2 4 56 %preset%
+0 0.185401 %preset% 1 0.185401 %preset% 2 2.38181 %preset% 3 0.185401
+%node% 2 4 57 %preset% 0 0 %preset% 1 0 %preset% 2 0 %preset% 3 0 %node%
+2 5 125 %preset% 0 0.5 %preset% 1 0.5 %node% 2 5 126 %node% 2 5 127
+%node% 2 5 128 %node% 2 5 129 %preset% 0 2 %preset% 1 0 %node% 2 5
+130 %preset% 0 0.5 %preset% 1 0.5 %node% 2 5 131 %node% 2 5 133 %preset%
+0 1 %preset% 1 2 %node% 2 6 125 %preset% 0 0.491984 %preset% 1 0.491984
+%node% 2 6 126 %node% 2 6 127 %node% 2 6 128 %node% 2 6 129 %preset%
+0 2 %preset% 1 0 %node% 2 6 130 %preset% 0 0.819095 %preset% 1 0.819095
+%node% 2 6 131 %node% 2 6 133 %preset% 0 0 %preset% 1 4 %node% 2 7
+77 %preset% 0 0.562814 %preset% 1 0.78392 %preset% 2 0.78392 %preset%
+3 0.562814 %node% 2 7 78 %preset% 0 0.603015 %preset% 1 0.231156 %preset%
+2 0.231156 %preset% 3 0.603015 %node% 2 7 79 %preset% 0 0 %preset%
+1 0 %preset% 2 0 %preset% 3 0 %node% 2 7 80 %preset% 0 0 %preset% 1
+0 %preset% 2 0 %preset% 3 0 %node% 2 7 81 %preset% 0 1 %preset% 1 1
+%preset% 2 1 %preset% 3 1 %node% 2 7 82 %preset% 0 1 %preset% 1 1 %preset%
+2 1 %preset% 3 1 %node% 2 7 83 %preset% 0 1 %preset% 1 1 %preset% 2
+1 %preset% 3 1 %node% 2 7 84 %preset% 0 1 %preset% 1 1 %preset% 2 1
+%preset% 3 1 %node% 2 9 109 %preset% 0 1 %preset% 1 1 %preset% 2 1
+%preset% 3 1 %node% 2 9 110 %preset% 0 0 %preset% 1 0 %preset% 2 0
+%preset% 3 0 %node% 2 9 111 %preset% 0 0.323232 %preset% 1 0.050505
+%preset% 2 0.050505 %preset% 3 0.323232 %node% 2 9 112 %preset% 0 0
+%preset% 1 0 %preset% 2 0 %preset% 3 0 %node% 2 9 113 %preset% 0 0
+%preset% 1 0 %node% 2 9 114 %preset% 0 0 %preset% 1 0 %node% 2 10 32
+%preset% 0 200 %preset% 1 389.394 %preset% 2 389.394 %preset% 3 200
+%node% 2 10 33 %preset% 0 0 %preset% 1 0.666667 %preset% 2 0.666667
+%preset% 3 0 %node% 2 10 34 %preset% 0 0 %preset% 1 0 %preset% 2 0
+%preset% 3 0 %node% 2 10 35 %preset% 0 0.252525 %preset% 1 0.393939
+%preset% 2 0.393939 %preset% 3 0.252525 %node% 2 11 62 %preset% 0 0.964824
+%preset% 1 0.964824 %preset% 2 0.964824 %preset% 3 0.964824 %node%
+2 11 63 %preset% 0 0.763819 %preset% 1 0.763819 %preset% 2 0.763819
+%preset% 3 0.763819 %node% 2 11 64 %preset% 0 1 %preset% 1 1 %preset%
+2 1 %preset% 3 1 %node% 2 11 65 %preset% 0 0.21608 %preset% 1 0.21608
+%preset% 2 0.21608 %preset% 3 0.21608 %node% 2 12 64 %preset% 0 0.501002
+%preset% 1 0.501002 %preset% 2 0.501002 %preset% 3 0.501002 %node%
+2 13 69 %preset% 0 404.838 %preset% 1 101.96 %preset% 2 101.96 %preset%
+3 404.838 %node% 2 13 70 %preset% 0 1 %preset% 1 1 %preset% 2 1 %preset%
+3 1 %node% 2 13 71 %preset% 0 1 %preset% 1 1 %preset% 2 1 %preset%
+3 1 %node% 2 13 72 %preset% 0 1 %preset% 1 1 %preset% 2 1 %preset%
+3 1 %node% 2 14 56 %preset% 0 0.935946 %preset% 1 0.935946 %preset%
+2 0.935946 %preset% 3 0.935946 %node% 2 14 57 %preset% 0 0 %preset%
+1 0 %preset% 2 0 %preset% 3 0 %node% 2 15 69 %preset% 0 73.489 %preset%
+1 73.489 %preset% 2 73.489 %preset% 3 235.024 %node% 2 15 70 %preset%
+0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 15 71 %preset%
+0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 15 72 %preset%
+0 1 %preset% 1 1 %preset% 2 1 %preset% 3 1 %node% 2 3 50 %preset% 1
+3 %preset% 0 3 %preset% 2 3 %preset% 3 3 %node% 2 18 29 %preset% 1
+0 %preset% 0 0 %preset% 2 0 %preset% 3 0 %node% 2 5 111 %preset% 1
+0.638277 %preset% 0 0.638277 %preset% 2 0.638277 %preset% 3 0.638277
+%node% 2 5 112 %node% 2 5 113 %node% 2 5 114 %node% 2 5 115 %preset%
+1 2 %preset% 0 0 %preset% 2 2 %preset% 3 0 %node% 2 5 116 %preset%
+1 0.5 %preset% 0 0.5 %preset% 2 0.5 %preset% 3 0.5 %node% 2 5 117 %node%
+2 5 119 %preset% 1 0 %preset% 0 0 %preset% 2 0 %preset% 3 0 %node%
+2 6 111 %preset% 1 0.638277 %preset% 0 0.638277 %preset% 2 0.638277
+%preset% 3 0.638277 %node% 2 6 112 %node% 2 6 113 %node% 2 6 114 %node%
+2 6 115 %preset% 1 2 %preset% 0 0 %preset% 2 2 %preset% 3 0 %node%
+2 6 116 %preset% 1 0.5 %preset% 0 0.5 %preset% 2 0.5 %preset% 3 0.5
+%node% 2 6 117 %node% 2 6 119 %preset% 1 -1 %preset% 0 1 %preset% 2
+-1 %preset% 3 1 %node% 2 9 107 %preset% 1 35.7725 %preset% 0 35.7725
+%preset% 2 36.9772 %preset% 3 4.90305 %node% 2 9 108 %preset% 1 0 %preset%
+0 0 %preset% 2 0.272727 %preset% 3 0.818182;
+#X obj 57 506 b4p_sah;
+#X text 271 18 Select a preset and draw asequence on the sequencer
+object;
+#X connect 0 0 1 0;
+#X connect 0 0 18 1;
+#X connect 1 0 2 0;
+#X connect 1 1 13 0;
+#X connect 1 1 15 0;
+#X connect 2 0 3 0;
+#X connect 3 0 18 0;
+#X connect 4 0 2 1;
+#X connect 5 0 7 0;
+#X connect 6 0 7 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 11 2;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 13 0 8 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 2;
+#X connect 16 0 17 0;
+#X connect 18 0 5 0;
+#X connect 18 0 6 0;

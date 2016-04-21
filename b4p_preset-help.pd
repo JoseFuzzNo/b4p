@@ -1,0 +1,72 @@
+#N canvas 607 70 558 529 10;
+#X obj 0 495 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_preset 3 12
+0 18 -204280 -1 0;
+#X obj 0 332 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 109 257 361 171 META 0;
+#X text 12 105 AUTHOR Jose Carlos Granja;
+#X text 12 125 WEBSITE -;
+#X text 12 145 RELEASE_DATE 2016;
+#X text 12 85 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 5 KEYWORDS preset state saving b4p;
+#X text 12 45 DESCRIPTION state saving hub;
+#X text 12 65 OUTLET_1 list;
+#X restore 500 497 pd META;
+#X obj 0 368 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 425 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 467 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 77 95 428 159 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X obj 146 78 preset_hub %hidden%;
+#X text 8 2 [b4p_preset] Related Objects;
+#X restore 102 497 pd Related_objects;
+#X obj 78 377 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 444 (none);
+#X msg 445 88 \; pd dsp 1;
+#X obj 445 66 loadbang;
+#X text 98 340 (none);
+#X text 11 23 state saving hub;
+#X obj 50 66 b4p_preset;
+#X obj 50 214 preset_hub b4p %hidden% %node% 3 7 2 64 %preset% 0 0.501002
+%preset% 1 0.501002 %preset% 2 0.501002 %preset% 3 0.501002 %preset%
+4 0.501002 %preset% 5 0.501002 %preset% 6 0.501002 %preset% 7 0.501002
+%preset% 8 0.501002 %preset% 9 0.501002 %preset% 10 0.501002 %preset%
+11 0.501002 %preset% 12 0.501002 %preset% 13 0.501002 %preset% 14 0.501002
+%preset% 15 0.501002 %preset% 16 0.501002 %preset% 18 0.501002 %preset%
+19 0.501002 %preset% 17 0.501002 %node% 3 7 3 53 %preset% 0 1 %preset%
+1 1 %preset% 2 1 %preset% 3 1 %preset% 4 1 %preset% 5 1 %preset% 6
+1 %preset% 7 1 %preset% 8 1 %preset% 9 1 %preset% 10 1 %preset% 11
+1 %preset% 12 1 %preset% 13 1 %preset% 14 1 %preset% 15 1 %preset%
+16 1 %preset% 18 1 %preset% 19 1 %preset% 17 1 %node% 3 7 3 54 %preset%
+0 0.5 %preset% 1 0.5 %preset% 2 0.5 %preset% 3 0.5 %preset% 4 0.5 %preset%
+5 0.5 %preset% 6 0.5 %preset% 7 0.5 %preset% 8 0.5 %preset% 9 0.5 %preset%
+10 0.5 %preset% 11 0.5 %preset% 12 0.5 %preset% 13 0.5 %preset% 14
+0.5 %preset% 15 0.5 %preset% 16 0.5 %preset% 18 0.5 %preset% 19 0.5
+%preset% 17 0.5 %node% 2 17 56 %preset% 0 0.1 %preset% 1 0.242115 %preset%
+2 3.31025 %preset% 3 0.383836 %preset% 4 13.5223 %preset% 5 50 %preset%
+6 0.227498 %preset% 7 0.884163 %preset% 8 27.8457 %preset% 9 0.330553
+%preset% 10 2.67863 %preset% 11 0.143501 %preset% 12 0.78063 %preset%
+13 2.85073 %preset% 14 1.52939 %preset% 15 0.236159 %preset% 16 6.09382
+%preset% 18 0.322421 %preset% 19 3.11041 %preset% 17 0.530608 %node%
+2 17 57 %preset% 0 0 %preset% 1 1 %preset% 2 3 %preset% 3 0 %preset%
+4 0 %preset% 5 2 %preset% 6 1 %preset% 7 3 %preset% 8 2 %preset% 9
+1 %preset% 10 2 %preset% 11 0 %preset% 12 1 %preset% 13 3 %preset%
+14 1 %preset% 15 0 %preset% 16 3 %preset% 18 1 %preset% 19 0 %preset%
+17 2;
+#X text 50 259 You need to connect the b4p_presetobject to a [preset_hub
+b4p] object.;
+#X obj 321 66 b4p_lfo;
+#X text 145 88 <- Yout can write your own presets;
+#X text 145 134 <- Try some of the existing presets;
+#X text 98 376 messages for [preset_hub b4p] object;
+#X text 50 239 IMPORTANT!;
+#X connect 11 0 10 0;
+#X connect 14 0 15 0;

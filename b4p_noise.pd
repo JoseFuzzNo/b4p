@@ -1,0 +1,97 @@
+#N canvas 198 23 549 568 10;
+#X obj 161 131 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 161 212 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 217 cnv 10 35 12 empty empty White 0 5 0 10 -1 -261234 0
+;
+#X obj 161 89 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 161 110 cnv 15 90 20 empty empty NOISE 5 10 0 14 -2209 -4032
+0;
+#X obj 98 474 outlet~;
+#X obj 98 274 noise~;
+#X obj 98 302 *~ 5;
+#X obj 173 160 mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8 -1625 -4032
+-4032 0 1;
+#X obj 174 141 cnv 10 12 12 empty empty Blue 0 5 0 10 -1625 -4032 0
+;
+#X obj 215 217 cnv 10 35 12 empty empty Color 0 5 0 10 -1 -261234 0
+;
+#X obj 183 473 outlet~;
+#X obj 213 160 mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8 -1625 -4032
+-4032 0 1;
+#X obj 217 141 cnv 10 12 12 empty empty Red 0 5 0 10 -1625 -4032 0
+;
+#X obj 280 143 * 100;
+#X obj 280 165 i;
+#X msg 280 187 label \$1%;
+#X obj 71 148 * 100;
+#X obj 71 170 i;
+#X msg 71 192 label \$1%;
+#X obj 183 324 hip~;
+#X obj 183 347 lop~;
+#X obj 246 271 expr ( 1 - $f1 ) * 6000 + 500;
+#X obj 186 244 expr $f1 * 6000 + 500;
+#N canvas 755 251 450 300 mute 0;
+#X obj 100 100 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 100 100 cnv 15 32 15 empty empty empty 20 12 0 14 -2209 -66577
+0;
+#X obj 100 100 cnv 15 15 15 empty \$0-muteCnv M 20 7 0 12 -1625 -166441
+0;
+#X obj 153 243 s \$0-muteCnv;
+#X obj 56 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 153 135 sel 0;
+#X obj 180 154 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 79 246 outlet;
+#X msg 153 181 color -26209 1;
+#X msg 180 206 color 47 47;
+#X obj 68 174 expr 1 - $f1;
+#X connect 0 0 5 0;
+#X connect 0 0 4 0;
+#X connect 0 0 10 0;
+#X connect 5 0 8 0;
+#X connect 5 1 6 0;
+#X connect 6 0 9 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 7 0;
+#X coords 0 -1 1 1 32 15 2 100 100;
+#X restore 217 112 pd mute;
+#X obj 183 446 *~;
+#X obj 389 389 line;
+#X msg 389 369 \$1 10;
+#X obj 389 410 sig~;
+#X obj 98 446 *~;
+#X obj 167 46 preset_node b4p;
+#X obj 202 67 preset_node b4p;
+#X connect 6 0 7 0;
+#X connect 7 0 20 0;
+#X connect 7 0 29 0;
+#X connect 8 0 17 0;
+#X connect 8 0 23 0;
+#X connect 12 0 14 0;
+#X connect 12 0 22 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 12 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 8 0;
+#X connect 20 0 21 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 23 0 20 1;
+#X connect 24 0 27 0;
+#X connect 25 0 11 0;
+#X connect 26 0 28 0;
+#X connect 27 0 26 0;
+#X connect 28 0 25 1;
+#X connect 28 0 29 1;
+#X connect 29 0 5 0;
+#X connect 30 0 8 0;
+#X connect 31 0 12 0;
+#X coords 0 -1 1 1 90 143 2 161 89;

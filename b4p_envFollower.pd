@@ -1,0 +1,113 @@
+#N canvas 400 79 549 615 10;
+#X obj 161 131 cnv 15 160 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 194 271 inlet~;
+#X obj 161 212 cnv 15 160 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 217 cnv 10 35 12 empty empty Audio 0 5 0 10 -1 -261234 0
+;
+#X obj 161 89 cnv 15 160 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 96 cnv 10 35 12 empty empty Input 0 5 0 10 -1 -261234 0
+;
+#X obj 190 140 cnv 10 12 12 empty empty Gain 0 5 0 10 -1625 -4032 0
+;
+#X obj 161 110 cnv 15 160 20 empty empty ENVELOPE\ FOLLOWER 5 10 0
+14 -2209 -4032 0;
+#X obj 2 648 outlet~;
+#X obj 244 140 cnv 10 12 12 empty empty Threshold 0 5 0 10 -1625 -4032
+0;
+#X obj 80 93 i;
+#X msg 363 587 color 2;
+#X msg 307 586 color 1;
+#X obj 307 614 s \$0-gateLed;
+#X obj 282 217 cnv 8 8 8 empty \$0-gateLed empty 20 12 0 14 -66577
+-262144 0;
+#X obj 295 217 cnv 10 12 12 empty empty Gate 0 5 0 10 -1 -261234 0
+;
+#X obj 232 217 cnv 10 35 12 empty empty Env 0 5 0 10 -1 -261234 0;
+#X obj 194 648 outlet~;
+#X obj 271 648 outlet~;
+#X obj 218 217 cnv 8 8 8 empty \$0-envLed empty 20 12 0 14 -13 -262144
+0;
+#X obj 194 333 /~ 5;
+#X obj 194 355 env~;
+#X obj 305 508 expr $f1 > $f2;
+#X obj 80 72 * 100;
+#X msg 80 115 label \$1%;
+#X obj 83 170 i;
+#X obj 83 149 * 100;
+#X msg 83 192 label \$1%;
+#X obj 387 461 r \$0-threshold;
+#X obj 261 235 s \$0-threshold;
+#X obj 306 555 sel 1 0;
+#X obj 271 577 * 5;
+#X obj 271 599 sig~;
+#X obj 195 494 sig~;
+#X obj 194 375 - 50;
+#X obj 195 395 / 10;
+#X obj 195 417 clip 0 5;
+#X obj 80 634 s \$0-envLed;
+#X obj 80 514 * -1;
+#X msg 80 610 color \$1;
+#X obj 80 537 - 1;
+#X obj 80 581 line;
+#X msg 195 439 \$1 50;
+#X obj 195 461 line;
+#X msg 80 559 \$1 50;
+#X obj 162 237 s \$0-gain;
+#X obj 75 485 expr $f1 * 51 + 50;
+#X obj 194 303 *~;
+#X obj 240 271 r \$0-gain;
+#X obj 387 483 * 5;
+#X obj 2 504 clip~ -5 5;
+#X obj 190 158 moonlib/mknob 25 100 0 2 0 1 empty empty 100% 5 32 0
+8 -1625 -4032 -4032 4950 1;
+#X obj 260 158 moonlib/mknob 25 100 0 1 0 1 empty empty 50% 5 32 0
+8 -1625 -4032 -4032 4950 1;
+#X obj 157 57 preset_node b4p;
+#X obj 265 52 preset_node b4p;
+#X connect 1 0 47 0;
+#X connect 10 0 24 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 0;
+#X connect 20 0 21 0;
+#X connect 21 0 34 0;
+#X connect 22 0 30 0;
+#X connect 22 0 31 0;
+#X connect 23 0 10 0;
+#X connect 24 0 52 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 27 0 51 0;
+#X connect 28 0 49 0;
+#X connect 30 0 12 0;
+#X connect 30 1 11 0;
+#X connect 31 0 32 0;
+#X connect 32 0 18 0;
+#X connect 33 0 17 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 42 0;
+#X connect 36 0 46 0;
+#X connect 38 0 40 0;
+#X connect 39 0 37 0;
+#X connect 40 0 44 0;
+#X connect 41 0 39 0;
+#X connect 42 0 43 0;
+#X connect 43 0 33 0;
+#X connect 43 0 22 0;
+#X connect 44 0 41 0;
+#X connect 46 0 38 0;
+#X connect 47 0 20 0;
+#X connect 47 0 50 0;
+#X connect 48 0 47 1;
+#X connect 49 0 22 1;
+#X connect 50 0 8 0;
+#X connect 51 0 26 0;
+#X connect 51 0 45 0;
+#X connect 52 0 23 0;
+#X connect 52 0 29 0;
+#X connect 53 0 51 0;
+#X connect 54 0 52 0;
+#X coords 0 -1 1 1 160 143 2 161 89;

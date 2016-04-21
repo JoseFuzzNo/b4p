@@ -1,0 +1,164 @@
+#N canvas 763 43 549 568 10;
+#X obj 161 131 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 161 212 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 164 217 cnv 10 35 12 empty empty CV 0 5 0 10 -1 -261234 0;
+#X obj 161 89 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 161 110 cnv 15 90 20 empty empty MIDI2CV 5 10 0 14 -2209 -4032
+0;
+#X obj 308 465 outlet~;
+#X obj 323 292 notein;
+#X obj 200 217 cnv 10 10 12 empty empty Velocity 0 5 0 10 -1 -261234
+0;
+#X obj 308 413 / 12;
+#X obj 308 439 sig~;
+#X obj 323 326 poly 1 1;
+#X obj 369 347 / 127;
+#X obj 369 369 * 5;
+#X obj 369 391 sig~;
+#X obj 369 413 outlet~;
+#X obj 162 246 s \$0-octCounter;
+#X obj 268 258 r \$0-octCounter;
+#X obj 268 280 * 12;
+#X obj 306 389 +;
+#X obj 268 302 t b f;
+#X obj 162 51 preset_node b4p;
+#N canvas 745 157 450 300 octaveController 0;
+#N canvas 333 253 450 300 counter 0;
+#X obj 136 155 i;
+#X obj 164 155 + 1;
+#X msg 179 133 1;
+#X msg 201 106 -1;
+#X obj 165 84 t b b b;
+#X obj 141 107 t b b b;
+#X obj 199 35 inlet;
+#X obj 133 47 inlet;
+#X obj 135 200 outlet;
+#X obj 22 121 loadbang;
+#X msg 22 143 0;
+#X obj 91 71 route set;
+#X msg 91 93 \$1;
+#X connect 0 0 1 0;
+#X connect 0 0 8 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 1;
+#X connect 3 0 1 1;
+#X connect 4 0 0 0;
+#X connect 4 1 1 0;
+#X connect 4 2 3 0;
+#X connect 5 0 0 0;
+#X connect 5 1 1 0;
+#X connect 5 2 2 0;
+#X connect 6 0 4 0;
+#X connect 7 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 11 1 5 0;
+#X connect 12 0 0 0;
+#X restore 110 183 pd counter;
+#X obj 104 338 s \$0-octLbl;
+#X obj 104 214 < 0;
+#X obj 104 236 sel 1;
+#X msg 131 315 label +\$1oct;
+#X msg 104 288 label \$1oct;
+#X obj 104 263 i;
+#X obj 131 266 i;
+#X obj 131 255 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 623 335 450 300 mute 0;
+#X obj 100 100 bng 19 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 100 cnv 19 19 19 empty \$0-plusCnv + 5 8 0 16 -1625 -44926
+0;
+#X obj 61 152 outlet;
+#X obj 100 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 134 sel 0;
+#X obj 212 153 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 185 242 s \$0-plusCnv;
+#X obj 105 168 delay 100;
+#X msg 185 180 color -26209 47;
+#X msg 212 205 color 47 0;
+#X connect 0 0 3 0;
+#X connect 0 0 2 0;
+#X connect 3 0 9 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 4 1 5 0;
+#X connect 5 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X coords 0 -1 1 1 19 19 2 100 100;
+#X restore 100 100 pd mute;
+#N canvas 627 110 450 300 mute 0;
+#X obj 100 100 bng 19 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 100 cnv 19 19 19 empty \$0-minusCnv - 5 8 0 17 -1625 -44926
+0;
+#X obj 61 152 outlet;
+#X obj 100 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 208 126 sel 0;
+#X obj 235 145 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 128 160 delay 100;
+#X obj 208 234 s \$0-minusCnv;
+#X msg 208 171 color -26209 47;
+#X msg 235 197 color 47 0;
+#X connect 0 0 3 0;
+#X connect 0 0 2 0;
+#X connect 3 0 6 0;
+#X connect 3 0 9 0;
+#X connect 4 0 8 0;
+#X connect 4 1 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X coords 0 -1 1 1 19 19 2 100 100;
+#X restore 151 100 pd mute;
+#X obj 120 100 cnv 19 30 19 empty \$0-octLbl +0oct 0 8 0 10 -1625 -4032
+0;
+#X obj 23 80 inlet;
+#X obj 18 338 outlet;
+#X msg 23 102 set \$1;
+#X connect 0 0 6 1;
+#X connect 0 0 7 1;
+#X connect 0 0 2 0;
+#X connect 0 0 13 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 1 8 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 1;
+#X connect 12 0 14 0;
+#X connect 14 0 0 0;
+#X coords 0 -1 1 1 70 19 2 100 100;
+#X restore 172 161 pd octaveController;
+#X connect 6 0 10 0;
+#X connect 6 1 10 1;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 10 1 18 0;
+#X connect 10 2 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 19 0;
+#X connect 18 0 8 0;
+#X connect 19 0 18 0;
+#X connect 19 1 18 1;
+#X connect 20 0 21 0;
+#X connect 21 0 15 0;
+#X coords 0 -1 1 1 90 143 2 161 89;

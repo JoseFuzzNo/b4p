@@ -1,0 +1,100 @@
+#N canvas 204 110 450 432 10;
+#X obj 100 222 cnv 15 90 20 empty empty empty 60 10 0 14 -1 -66577
+0;
+#X obj 100 141 cnv 15 90 80 empty empty empty 20 12 0 14 -1625 -66577
+0;
+#X obj 100 100 cnv 15 90 20 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 103 226 cnv 10 35 12 empty empty Left 0 5 0 10 -1 -261234 0
+;
+#X obj 158 226 cnv 10 15 12 empty empty Right 0 5 0 10 -1 -261234 0
+;
+#X obj 114 153 cnv 10 12 12 empty empty Gain 0 5 0 10 -1625 -4032 0
+;
+#X obj 24 148 * 100;
+#X obj 24 170 i;
+#X msg 24 192 label \$1%;
+#X obj 100 121 cnv 15 90 20 empty empty INPUT 5 10 0 14 -2209 -4032
+0;
+#X obj 61 415 env~;
+#X obj 61 373 *~ 1;
+#X obj 121 373 *~ 1;
+#X obj 121 415 env~;
+#X obj 61 437 - 100;
+#X obj 121 437 - 100;
+#N canvas 705 389 450 300 vu 0;
+#X obj 99 99 cnv 15 26 62 empty empty empty 20 12 0 14 -2209 -66577
+0;
+#X obj 100 100 cnv 10 11 60 empty empty empty 20 12 0 14 -4032 -66577
+0;
+#X obj 100 100 cnv 1 11 54 empty \$0-vu1 empty 20 12 0 14 -1625 -66577
+0;
+#X obj 113 100 cnv 10 11 60 empty empty empty 20 12 0 14 -4032 -66577
+0;
+#X obj 113 100 cnv 1 11 55 empty \$0-vu2 empty 20 12 0 14 -1625 -66577
+0;
+#X obj 196 20 inlet;
+#X obj 196 45 expr ( -$f1 + 12 ) * 60 / 112;
+#X obj 196 137 s \$0-vu1;
+#X obj 312 91 inlet;
+#X obj 312 116 expr ( -$f1 + 12 ) * 60 / 112;
+#X obj 312 208 s \$0-vu2;
+#X msg 196 116 vis_size 11 \$1;
+#X msg 312 187 vis_size 11 \$1;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 0;
+#X connect 11 0 7 0;
+#X connect 12 0 10 0;
+#X coords 0 -1 1 1 25 62 2 99 99;
+#X restore 151 150 pd vu;
+#X obj 114 301 line;
+#X msg 113 280 \$1 50;
+#X msg 319 77 -100;
+#X obj 315 28 sel 0;
+#X obj 319 121 line, f 9;
+#X msg 319 99 \$1 500;
+#X obj 317 50 delay 10;
+#X msg 121 459 \$1;
+#X obj 389 121 line, f 9;
+#X msg 61 459 \$1;
+#X obj 59 306 adc~;
+#X obj 61 351 *~ 5;
+#X obj 121 351 *~ 5;
+#X obj 241 399 outlet~;
+#X obj 163 398 outlet~;
+#X obj 114 171 moonlib/mknob 25 500 0 1 0 1 empty empty 50% 7 32 0
+8 -1625 -4032 -4032 25000 1;
+#X obj 103 79 preset_node b4p;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 32 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 11 0 31 0;
+#X connect 12 0 13 0;
+#X connect 12 0 30 0;
+#X connect 13 0 15 0;
+#X connect 14 0 26 0;
+#X connect 15 0 24 0;
+#X connect 17 0 12 1;
+#X connect 17 0 11 1;
+#X connect 18 0 17 0;
+#X connect 19 0 22 0;
+#X connect 20 0 23 0;
+#X connect 21 0 16 0;
+#X connect 22 0 21 0;
+#X connect 22 0 25 0;
+#X connect 23 0 19 0;
+#X connect 24 0 25 0;
+#X connect 25 0 16 1;
+#X connect 26 0 21 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 28 0 11 0;
+#X connect 29 0 12 0;
+#X connect 32 0 6 0;
+#X connect 32 0 18 0;
+#X connect 33 0 32 0;
+#X coords 0 -1 1 1 90 143 2 100 100;

@@ -1,0 +1,78 @@
+#N canvas 96 16 558 622 10;
+#X obj 0 715 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_lfo 3 12 0 18
+-204280 -1 0;
+#X obj 0 452 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 195 272 507 361 META 0;
+#X text 12 165 AUTHOR Jose Carlos Granja;
+#X text 12 185 WEBSITE -;
+#X text 12 205 RELEASE_DATE 2016;
+#X text 12 5 KEYWORDS oscillator b4p;
+#X text 12 65 INLET_0 signal;
+#X text 12 105 OUTLET_0 signal;
+#X text 12 145 LIBRARY b4p;
+#X text 12 45 DESCRIPTION low frequency oscillator;
+#X text 12 25 LICENSE BSD;
+#X text 12 85 INLET_1 list;
+#X text 12 125 OUTLET_1 list;
+#X restore 500 717 pd META;
+#X obj 0 548 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 645 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 687 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 208 83 428 545 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X obj 31 102 b4p_cloud;
+#X obj 30 262 b4p_adsr;
+#X obj 247 262 b4p_ahd;
+#X text 8 2 [b4p_lfo] Related Objects;
+#X obj 289 102 b4p_metro;
+#X restore 102 717 pd Related_objects;
+#X obj 78 557 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 460 signal;
+#X obj 78 460 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 664 (none);
+#X msg 21 387 \; pd dsp 1;
+#X obj 21 365 loadbang;
+#X text 98 556 signal;
+#X obj 237 93 b4p_lfo;
+#X obj 237 262 b4p_scope;
+#X text 168 460 - a rising trigger will reset the phase of the LFO.
+;
+#X text 168 556 - output waveform (0-5v);
+#X text 11 23 low frequency oscillator;
+#X obj 80 93 b4p_metro;
+#X text 371 286 <- Adjust the scope with this buttons;
+#X text 81 245 Try connectingthis outputto the LFO.;
+#X text 194 60 You can change the output waveformwith the side buttons.
+;
+#X text 337 190 <- Phase indicator;
+#X obj 78 490 cnv 17 3 40 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 98 490 freq;
+#X text 98 510 waveform;
+#X text 168 490 - set the LFO frequency (0-1);
+#X text 168 510 - set the LFO waveform (0-3);
+#X obj 78 586 cnv 17 3 40 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 98 586 freq;
+#X text 98 606 waveform;
+#X text 168 586 - LFO frequency (0-1);
+#X text 168 606 - LFO waveform (0-3);
+#N canvas 77 175 348 460 daisyChain 0;
+#X obj 114 141 b4p_lfo;
+#X obj 114 311 b4p_lfo;
+#X text 97 64 Daisy chaining modules.;
+#X text 40 116 Try changing any parameter of the top LFO.;
+#X connect 0 1 1 1;
+#X restore 431 424 pd daisyChain;
+#X text 290 424 Daisy Chaining LFOs ->;
+#X connect 13 0 12 0;
+#X connect 15 0 16 0;

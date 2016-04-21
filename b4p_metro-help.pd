@@ -1,0 +1,50 @@
+#N canvas 96 16 558 622 10;
+#X obj 0 615 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_metro 3 12 0
+18 -204280 -1 0;
+#X obj 0 452 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 180 211 507 361 META 0;
+#X text 12 105 AUTHOR Jose Carlos Granja;
+#X text 12 125 WEBSITE -;
+#X text 12 145 RELEASE_DATE 2016;
+#X text 12 65 OUTLET_0 signal;
+#X text 12 85 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 5 KEYWORDS metronome metro b4p;
+#X text 12 45 DESCRIPTION metronome;
+#X restore 500 617 pd META;
+#X obj 0 498 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 545 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 587 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 662 168 428 545 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X obj 81 91 b4p_lfo;
+#X obj 81 245 b4p_sequencer;
+#X obj 185 91 b4p_sah;
+#X text 8 2 [b4p_metro] Related Objects;
+#X restore 102 617 pd Related_objects;
+#X obj 78 507 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 98 564 (none);
+#X msg 485 78 \; pd dsp 1;
+#X obj 485 56 loadbang;
+#X text 98 506 signal;
+#X text 11 23 metronome;
+#X text 98 460 (none);
+#X text 168 506 - trigger output (0-5v);
+#X obj 263 48 b4p_metro;
+#X obj 263 196 b4p_ahd;
+#X obj 111 271 b4p_scope;
+#X text 63 77 Click and drag inside the moduleto change the tempo.
+;
+#X text 63 120 Also \, clicking \, writing a valueand pressing enter
+will changethe tempo.;
+#X connect 11 0 10 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
