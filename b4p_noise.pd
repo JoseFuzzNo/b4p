@@ -12,15 +12,11 @@
 #X obj 98 474 outlet~;
 #X obj 98 274 noise~;
 #X obj 98 302 *~ 5;
-#X obj 173 160 mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8 -1625 -4032
--4032 0 1;
 #X obj 174 141 cnv 10 12 12 empty empty Blue 0 5 0 10 -1625 -4032 0
 ;
 #X obj 215 217 cnv 10 35 12 empty empty Color 0 5 0 10 -1 -261234 0
 ;
 #X obj 183 473 outlet~;
-#X obj 213 160 mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8 -1625 -4032
--4032 0 1;
 #X obj 217 141 cnv 10 12 12 empty empty Red 0 5 0 10 -1625 -4032 0
 ;
 #X obj 280 143 * 100;
@@ -68,30 +64,34 @@
 #X obj 98 446 *~;
 #X obj 167 46 preset_node b4p;
 #X obj 202 67 preset_node b4p;
+#X obj 173 160 moonlib/mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8
+-1625 -4032 -4032 0 1;
+#X obj 213 160 moonlib/mknob 25 100 0 1 0 1 empty empty 0% 7 32 0 8
+-1625 -4032 -4032 0 1;
 #X connect 6 0 7 0;
-#X connect 7 0 20 0;
-#X connect 7 0 29 0;
-#X connect 8 0 17 0;
-#X connect 8 0 23 0;
-#X connect 12 0 14 0;
-#X connect 12 0 22 0;
-#X connect 14 0 15 0;
+#X connect 7 0 18 0;
+#X connect 7 0 27 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 31 0;
 #X connect 15 0 16 0;
-#X connect 16 0 12 0;
-#X connect 17 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 30 0;
 #X connect 18 0 19 0;
-#X connect 19 0 8 0;
-#X connect 20 0 21 0;
-#X connect 21 0 25 0;
-#X connect 22 0 21 1;
-#X connect 23 0 20 1;
-#X connect 24 0 27 0;
-#X connect 25 0 11 0;
-#X connect 26 0 28 0;
-#X connect 27 0 26 0;
-#X connect 28 0 25 1;
-#X connect 28 0 29 1;
-#X connect 29 0 5 0;
-#X connect 30 0 8 0;
+#X connect 19 0 23 0;
+#X connect 20 0 19 1;
+#X connect 21 0 18 1;
+#X connect 22 0 25 0;
+#X connect 23 0 10 0;
+#X connect 24 0 26 0;
+#X connect 25 0 24 0;
+#X connect 26 0 23 1;
+#X connect 26 0 27 1;
+#X connect 27 0 5 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;
+#X connect 30 0 15 0;
+#X connect 30 0 21 0;
 #X connect 31 0 12 0;
+#X connect 31 0 20 0;
 #X coords 0 -1 1 1 90 143 2 161 89;
