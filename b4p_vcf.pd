@@ -1,4 +1,4 @@
-#N canvas 683 10 647 568 10;
+#N canvas 1369 297 647 568 10;
 #X obj 161 131 cnv 15 250 80 empty empty empty 20 12 0 14 -1625 -66577
 0;
 #X obj 134 463 inlet~;
@@ -318,6 +318,8 @@
 #X connect 23 0 0 0;
 #X coords 0 -1 1 1 19 72 2 100 100;
 #X restore 218 135 pd typeSelector;
+#X obj 436 309 r \$0-filterType;
+#X msg 436 331 filterType \$1;
 #X connect 1 0 45 0;
 #X connect 2 0 7 0;
 #X connect 3 0 8 0;
@@ -417,4 +419,6 @@
 #X connect 112 0 108 0;
 #X connect 114 0 105 0;
 #X connect 115 0 88 0;
+#X connect 116 0 117 0;
+#X connect 117 0 68 0;
 #X coords 0 -1 1 1 250 143 2 161 89;
