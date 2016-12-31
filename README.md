@@ -1,7 +1,6 @@
 #B4P
 
-B4P is a PureData abstraction library that emulates the behavior of modular synthesizers. B4P is made with Pd-L2Ork distribution of PureData.
-
+B4P is a PureData abstraction library that emulates the behavior of modular synthesizers. B4P is made with [Pd-L2Ork](https://github.com/pd-l2ork/pd) distribution of PureData.
 
 INSTALL
 -------
@@ -42,7 +41,7 @@ It is possible to save the state of all B4P object in a patch with the [b4p_pres
 
 ![Presets](https://s17.postimg.org/ozq54vvzj/preset.png)
 
-***NOTE:** It is necesary to connect this object to a [preset_hub b4p] object.
+*NOTE:* It is necesary to connect this object to a [preset_hub b4p] object.
 
 EXAMPLES
 --------

@@ -44,9 +44,6 @@
 #X obj 198 201 b4p_freeverb;
 #X obj 198 349 b4p_output;
 #X text 11 23 stereo reverb;
-#X text 1 230 The freeverb is reverb basedon the [freeverb~] object.You
-can control the size ofthe reverb \, the damping factor \, the width
-and the blend withthe original signal.;
 #X text 98 530 signal;
 #X obj 78 530 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
@@ -64,8 +61,12 @@ and the blend withthe original signal.;
 #X text 327 112 You can freeze the reverb applinga gate to the Freeze
 inlet.Try connecting the LFO to theFreeze input.;
 #X obj 420 201 b4p_lfo;
+#X text 1 230 Freeverb is reverb basedon the [freeverb~] object.You
+can control the size ofthe reverb \, the damping factor \, the width
+and the blend withthe original signal.;
 #X connect 13 0 12 0;
 #X connect 15 0 16 0;
 #X connect 15 1 16 2;
 #X connect 16 0 17 0;
 #X connect 16 1 17 1;
+#X connect 31 0 16 1;
