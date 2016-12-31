@@ -1,0 +1,36 @@
+#N canvas 774 36 558 624 10;
+#X obj 0 596 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 0 0 cnv 15 552 40 empty \$0-pddp.cnv.header b4p_dsp 3 12 0 18
+-204280 -1 0;
+#X obj 0 337 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 109 257 507 361 META 0;
+#X text 12 85 AUTHOR Jose Carlos Granja;
+#X text 12 105 WEBSITE -;
+#X text 12 125 RELEASE_DATE 2016;
+#X text 12 65 LIBRARY b4p;
+#X text 12 25 LICENSE BSD;
+#X text 12 5 KEYWORDS cpu usage dsp;
+#X text 12 45 DESCRIPTION dsp controller;
+#X restore 500 598 pd META;
+#X obj 0 391 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 0 436 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 0 568 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#N canvas 208 83 428 338 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [b4p_dsp] Related Objects;
+#X obj 160 84 b4p_output;
+#X restore 102 598 pd Related_objects;
+#X text 98 455 (none);
+#X obj 171 129 b4p_dsp;
+#X text 11 23 DSP controller;
+#X text 283 191 Click on the object toactivate/deactivate the DSP
+;
+#X text 105 91 This object shows the current CPU usage.;
+#X text 98 345 (none);
+#X text 98 399 (none);
